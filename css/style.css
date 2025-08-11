@@ -1650,3 +1650,55 @@ h1, h2, h3, h4, h5,
   .testimony-39291 .text span {
     font-size: 14px;
     color: #ccc; }
+     /* Make the text behave like a link */
+  .email-text {
+    font-weight: normal;
+    cursor: pointer;
+    color: inherit;
+    position: relative;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+ .email-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.email-link:hover {
+  transform: translateX(5px);
+}
+
+/* Ensure the text color actually changes even if nested in spans/h4 */
+.email-link:hover,
+.email-link:hover .h4,
+.email-link:hover span {
+  color: #007bff !important;
+}
+
+
+  /* Click-to-email using JS-free CSS trick */
+  .email-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Make the whole span clickable like a link */
+  .email-text:active {
+    color: #0056b3;
+  }
+
+  /* Pointer events for the invisible link */
+  .email-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: auto;
+  }
+
+  /* This makes it a clickable link purely in CSS by wrapping it in an anchor dynamically */
+  .email-text::after {
+    content: attr(data-email);
+  }
