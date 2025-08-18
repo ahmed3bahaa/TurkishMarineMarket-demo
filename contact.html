@@ -23,6 +23,11 @@
   <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/style.css">
+  <!-- START Formbricks Surveys -->
+<script type="text/javascript">
+!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://app.formbricks.com/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:"cmeedbmr4a12huk01e5manoms",appUrl:"https://app.formbricks.com"}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+</script>
+<!-- END Formbricks Surveys -->
 
 </head>
 
@@ -159,42 +164,50 @@
 
    <div class="site-section">
   <div class="container">
-    <form id="contactForm" action="https://formspree.io/f/mldlakdo" method="POST">
-      <div class="row">
-        <div class="col-md-6 form-group">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="first_name" class="form-control form-control-lg" required>
-        </div>
-        <div class="col-md-6 form-group">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="last_name" class="form-control form-control-lg" required>
-        </div>
-      </div>
+   <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" >
+     <input type="hidden" name="access_key" value="330f67f4-1680-480c-8770-40d20b06b46c">
+  <!-- Honeypot Spam Protection -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-      <div class="row">
-        <div class="col-md-6 form-group">
-          <label for="eaddress">Email Address</label>
-          <input type="email" id="eaddress" name="email" class="form-control form-control-lg" required>
-        </div>
-        <div class="col-md-6 form-group">
-          <label for="tel">Tel. Number</label>
-          <input type="text" id="tel" name="phone" class="form-control form-control-lg">
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="first_name" class="form-control form-control-lg" required>
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="last_name" class="form-control form-control-lg" required>
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" cols="30" rows="10" class="form-control" required></textarea>
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <label for="eaddress">Email Address</label>
+      <input type="email" id="eaddress" name="email" class="form-control form-control-lg" required>
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="tel">Tel. Number</label>
+      <input type="text" id="tel" name="phone" class="form-control form-control-lg">
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="col-12">
-          <input type="submit" value="Send Message" class="btn btn-primary rounded-0 px-3 px-5">
-        </div>
-      </div>
-    </form>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" cols="30" rows="10" class="form-control" required></textarea>
+    </div>
+  </div>
+
+ 
+
+
+  <div class="row">
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary rounded-0 px-3 px-5">Send Message</button>
+    </div>
+  </div>
+</form>
+
   </div>
 </div>
 
@@ -299,28 +312,8 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/jquery.mb.YTPlayer.min.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      alert('Thanks! Your message was sent.');
-      form.reset();
-    } else {
-      alert('Sorry, something went wrong. Please try again.');
-    }
-  });
-</script>
 
-
-
-
-
+  
   <script src="js/main.js"></script>
 
 </body>
