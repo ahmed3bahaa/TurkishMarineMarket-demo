@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5,
           transition: 0s all;
           color: #343a40; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown .active > a {
-          color: #1089ff !important; }
+          color: #387cc1 !important; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -1702,3 +1702,64 @@ h1, h2, h3, h4, h5,
   .email-text::after {
     content: attr(data-email);
   }
+/* Hide dropdown by default */
+#products-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #007bff; /* your navbar blue */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+  border-radius: 5px;
+}
+
+/* Show dropdown when the 'show' class is added */
+#products-dropdown.show {
+  display: block;
+}
+
+/* Dropdown link style */
+#products-dropdown li a {
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+#products-dropdown li a:hover {
+  background-color: #0056b3;
+}
+
+/* Hide dropdown menus by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #007bff; /* Navbar blue */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+  border-radius: 6px;
+  min-width: 220px;
+}
+
+/* When toggled open */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Style for dropdown links */
+.dropdown-content li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+
+.dropdown-content li a:hover {
+  background-color: #0056b3;
+}
+
+
