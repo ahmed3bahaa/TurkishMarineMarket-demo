@@ -1762,4 +1762,90 @@ h1, h2, h3, h4, h5,
   background-color: #0056b3;
 }
 
+.burning-text {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
+  /* fiery gradient inside the text */
+  background: linear-gradient(
+    180deg,
+    #ffffc2 0%,
+    #ffd54f 20%,
+    #ff9800 40%,
+    #ff5722 70%,
+    #4a0000 100%
+  );
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* glowing edges */
+  text-shadow:
+    0 0 2px #fff3e0,
+    0 0 5px #ff9800,
+    0 0 10px #ff5722,
+    0 0 15px #f44336;
+
+  animation:
+    burnGradient 1.5s ease-in-out infinite alternate,
+    burnFlicker 0.18s infinite;
+}
+
+/* flame glow behind the word */
+.burning-text::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  filter: blur(6px);
+  opacity: 0.9;
+  background: radial-gradient(circle at 50% 0,
+    rgba(255, 255, 255, 0.9) 0,
+    rgba(246, 109, 3, 0.9) 15%,
+    rgba(255, 152, 0, 0.9) 35%,
+    rgba(244, 67, 54, 0.8) 55%,
+    rgba(0, 0, 0, 0) 75%
+  );
+  animation: flameDance 0.7s ease-in-out infinite alternate;
+}
+
+/* little sparks going up */
+.burning-text::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  box-shadow:
+    -12px -8px 6px rgba(255, 255, 255, 0.8),
+    -4px -18px 4px rgba(236, 18, 18, 0.804),
+    6px -12px 5px rgba(255, 193, 7, 0.6),
+    14px -20px 6px rgba(237, 54, 17, 0.821),
+    -10px -26px 5px rgba(255, 87, 34, 0.5),
+    8px -30px 6px rgba(244, 67, 54, 0.5);
+  animation: sparksRise 1s linear infinite;
+}
+
+/* animations */
+
+@keyframes burnGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes burnFlicker {
+  0% {
+    text-shadow:
+      0 0 2px #fff3e0,
+  }
+}

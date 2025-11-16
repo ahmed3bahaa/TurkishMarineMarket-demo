@@ -51,16 +51,12 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-
-
-    
     <div class="header-top bg-light">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-6 col-lg-3">
             <a href="index.html">
               <img src="images/TurkishMarineMarket.png" alt="Image" class="img-fluid">
-              <!-- <strong>Water</strong>Boat -->
             </a>
           </div>
           <div class="col-lg-3 d-none d-lg-block">
@@ -90,7 +86,7 @@
             </div>
           </div>
 
-         <div class="col-lg-3 d-none d-lg-block">
+            <div class="col-lg-3 d-none d-lg-block">
   <div class="quick-contact-icons d-flex ">
     <div class="icon align-self-start">
       <span class="icon-envelope text-primary"></span>
@@ -104,15 +100,13 @@
   </div>
 </div>
 
-
-
-
           <div class="col-6 d-block d-lg-none text-right">
               <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
                 class="icon-menu h3"></span></a>
           </div>
         </div>
       </div>
+      
 
 
       
@@ -123,25 +117,62 @@
           
           <div class="mx-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
-                <li>
-                  <a href="index.html" class="nav-link text-left">Home</a>
-                </li>
-                <li class="active">
-                  <a href="about.html" class="nav-link text-left">About Us</a>
-                </li>
-                <li>
-                  <a href="services.html" class="nav-link text-left">Services</a>
-                </li>
-                <li>
-                    <a href="Products.html" class="nav-link text-left">Products</a>
-                </li>
-            
-                <li>
-                    <a href="contact.html" class="nav-link text-left">Contact</a>
-                  </li>
-              </ul>                                                                                                                                                                                                                                                                                          </ul>
-            </nav>
+  <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
+
+    <!-- HOME -->
+    <li>
+      <a href="index.html" class="nav-link text-left">Home</a>
+    </li>
+
+    <!-- ABOUT -->
+    <li>
+      <a href="about.html" class="nav-link text-left">About Us</a>
+    </li>
+
+    <!-- SERVICES DROPDOWN -->
+    <li class="active">
+      <a href="services.html" class="nav-link text-left" id="services-btn">Services ▾</a>
+      <ul class="dropdown-content" id="services-dropdown">
+        <li><a href="Service-pages/Manufacturing.html">Manufacturing Boats & Yachts</a></li>
+        <li><a href="Service-pages/Maintainance.html">Maintainance</a></li>
+        <li><a href="Service-pages/Accessories.html">Accessories & Raw Material Supply</a></li>
+      </ul>
+    </li>
+
+    <!-- PRODUCTS DROPDOWN -->
+    <li class="active">
+      <a href="Products.html" class="nav-link text-left" id="products-btn">Products ▾</a>
+      <ul class="dropdown-content" id="products-dropdown">
+        <li><a href="Products-pages/Inflatable.html">Inflatable boats</a></li>
+        <li><a href="Products-pages/FiberGlass.html">Fiberglass boats</a></li>
+        <li><a href="Products-pages/BoatFabrics.html">Boat fabrics</a></li>
+        <li><a href="Products-pages/Yachts.html">Yachts</a></li>
+        <li><a href="Products-pages/JetCars.html">Jet cars</a></li>
+        <li><a href="Products-pages/Accessories.html">Accessories (Aluminium floors, plastic accessories..etc)</a></li>
+        <li><a href="Products-pages/Pedal.html">Pedal Boats</a></li>
+        <li><a href="Products-pages/SunBeds.html">Sunbeds</a></li>
+        <li><a href="Products-pages/WaterTank.html">Water tanks</a></li>
+        <li><a href="Products-pages/AntiSlip-Floor.html">Anti slip floor</a></li>
+        <li><a href="Products-pages/JetBoats.html">
+          <strong>Jet boats <span style="color:red;">(new)</span></strong>
+        </a></li>
+      </ul>
+    </li>
+
+   
+ <li>
+      <a href="HotSale.html" class="nav-link text-left">HotSale</a>
+    </li>
+
+    <!-- CONTACT -->
+    <li>
+      <a href="contact.html" class="nav-link text-left">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+
+
 
           </div>
          
@@ -152,56 +183,169 @@
     
     </div>
     
-    
+<div class="hero-slide owl-carousel site-blocks-cover" id="hero-slider"></div>
 
-      <div class="intro-section" style="background-image: url('images/hero_2.jpg');">
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const start = 7;
+    const end = 58;
+    const folder = "images/";
+    const prefix = "IMG-20251012-WA";
+    const ext = ".jpg";
+
+    const slider = document.getElementById("hero-slider");
+
+    const titles = [
+      "",
+      "",
+      ""
+    ];
+
+    // Build slides
+    for (let i = start; i <= end; i++) {
+      const num = i.toString().padStart(4, '0');
+      const bg = `${folder}${prefix}${num}${ext}`;
+      const title = titles[(i - start) % titles.length];
+
+      const slide = document.createElement("div");
+      slide.className = "intro-section";
+      slide.style.backgroundImage = `url('${bg}')`;
+      slide.innerHTML = `
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 mx-auto text-center" data-aos="fade-up">
-              <h1>About US</h1>
-              <p>Welcome to Cyberwize Turk , a premier marine solutions provider based in the heart of Istanbul. Founded in 2022, we bring a wealth of experience and expertise from across the World to the vibrant maritime industry of Turkey and beyond.
-At Cyberwize Turk, we specialize in the manufacturing, maintenance, and sale of high-quality marine accessories. Our dedication to innovation and quality ensures that we provide products that meet the highest industry standards. Whether you're a seasoned sailor or a first-time boat owner, our extensive range of accessories is designed to enhance your maritime experience.
-Our team consists of seasoned professionals with extensive backgrounds in marine design and engineering, ensuring that we deliver not only functional products but also aesthetically pleasing designs tailored to your needs. We draw on years of international experience, allowing us to infuse global best practices into our operations, guaranteeing superior service and products for our customers.
-We believe that the foundation of our success lies in our commitment to quality, customer satisfaction, and continuous improvement. As we grow, we remain focused on our passion for the sea and our commitment to providing exceptional service. Together with our clients, we aim to elevate every nautical adventure.
-Thank you for choosing Cyberwize Turk. We look forward to serving you and being a part of your maritime journey.</p>
-<style>
-  /* Only target the intro-section with hero_2.jpg */
-  .intro-section[style*="hero_2.jpg"] p {
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-</style>
-
-              <p><a href="contact.html" class="btn btn-primary py-3 px-5">Contact</a></p>
+             
             </div>
           </div>
         </div>
-      </div>
+      `;
+      slider.appendChild(slide);
+    }
 
-    
+    $(window).on('load', function () {
+  $('.hero-slide').owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 2000,  // 2 seconds between slides
+    autoplayHoverPause: true,
+    animateOut: 'fadeOut',
+    smartSpeed: 40,        // faster transition
+    lazyLoad: true          // only load visible + next slide
+  });
+});
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    }); 
+
+  });
+</script>
+
+
+
 
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <img src="images/hero_2.jpg" alt="Image" class="img-fluid">
+         <video src="images/video.mp4" class="img-fluid" autoplay muted loop playsinline></video>
+
           </div>
           <div class="col-md-6">
             <span class="text-serif text-primary">About Us</span>
             <h3 class="heading-92913 text-black">Welcome To Our Website</h3>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, illum, quasi. Odit velit deserunt eligendi unde, enim. Enim fugiat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius ullam impedit architecto debitis facilis!</p> -->
             <p>Welcome to Turkish Marine Market – your trusted partner for all things marine.
 From durable inflatable boats and high-quality accessories to PVC-coated fabrics, fiberglass yachts, and exciting water games, we provide everything you need to enjoy life on the water. With a commitment to quality, innovation, and customer satisfaction, we proudly serve professionals, enthusiasts, and adventurers who demand reliable marine solutions. Whether you’re outfitting your vessel or exploring new water experiences, Turkish Marine Market is here to help you navigate with confidence.</p>
-            <p><a href="#" class="btn btn-primary py-3 px-4">Learn More</a></p>
+            <p><a href="about.html" class="btn btn-primary py-3 px-4">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="service-29283">
+              <span class="wrap-icon-39293">
+                <span class="flaticon-yacht"></span>
+              </span>
+              <h3>Luxuries boats</h3>
+  
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="service-29283">
+              <span class="wrap-icon-39293">
+                <span class="flaticon-shield"></span>
+              </span>
+              <h3>10 Years of Experience</h3>
+            
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="service-29283">
+              <span class="wrap-icon-39293">
+                <span class="flaticon-captain"></span>
+              </span>
+              <h3>Impeccible Products</h3>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-image overlay" style="background-image: url('images/hero_2.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="counter-39392">
+              <h3>50+</h3>
+              <span>Boat Types</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counter-39392">
+              <h3>100+</h3>
+              <span>Customers Satisfied</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counter-39392">
+              <h3>12</h3>
+              <span>Number of Staffs</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counter-39392">
+              <h3>493</h3>
+              <span>Sea Destinations</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counter-39392">
+              <h3>200+</h3>
+              <span>Boats Sold</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
    
+         
+        
+         
 
     
-
+    
 
     
 
@@ -209,7 +353,8 @@ From durable inflatable boats and high-quality accessories to PVC-coated fabrics
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
-           
+        
+            
             <p class="mb-0"><a href="contact.html" class="btn btn-warning py-3 px-5 text-white">Contact Us</a></p>
           </div>
         </div>
@@ -222,11 +367,11 @@ From durable inflatable boats and high-quality accessories to PVC-coated fabrics
         <div class="row">
           <div class="col-lg-3">
             <p class="mb-4"><img src="images/TurkishMarineMarket.png" alt="Image" class="img-fluid"></p>
-            <p>TurkishMarineMarket for Marine manufacturing and exporting</p>  
-            <p><a href="#">Learn More</a></p>
+           <p>TurkishMarineMarket for Marine manufacturing and exporting</p>  
+            
           </div>
           <div class="col-lg-3">
-            <h3 class="footer-heading"><span>Our Company</span></h3>
+            <!-- <h3 class="footer-heading"><span>Our Company</span></h3>
             <ul class="list-unstyled">
                 <li><a href="#">About</a></li>
                 <li><a href="#">News</a></li>
@@ -234,43 +379,91 @@ From durable inflatable boats and high-quality accessories to PVC-coated fabrics
                 <li><a href="#">Our Team</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">Projects</a></li>
-            </ul>
+            </ul> -->
           </div>
           <div class="col-lg-3">
-              <h3 class="footer-heading"><span>Our Services</span></h3>
+              <!-- <h3 class="footer-heading"><span>Our Services</span></h3>
               <ul class="list-unstyled">
                   <li><a href="#">Industrial</a></li>
                   <li><a href="#">Construction</a></li>
                   <li><a href="#">Remodeling</a></li>
-              </ul>
+              </ul> -->
           </div>
           <div class="col-lg-3">
-              <h3 class="footer-heading"><span>Contact</span></h3>
+              <!-- <h3 class="footer-heading"><span>Contact</span></h3>
               <ul class="list-unstyled">
                   <li><a href="#">Help Center</a></li>
                   <li><a href="#">Support Community</a></li>
                   <li><a href="#">Press</a></li>
                   <li><a href="#">FAQ</a></li>
                   <li><a href="#">Our Partners</a></li>
-              </ul>
+              </ul> -->
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
             <div class="copyright">
-  <p>
-    &copy; <script>document.write(new Date().getFullYear());</script> TurkishMarineMarket
-    All Rights Reserved. | Template by 
-    <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a>
-  </p>
-</div>
-
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> TurkishMarineMarket
+    All Rights Reserved. | Template by  <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
+
+    <a href="https://wa.me/905536666042" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> <span class="text">BUY NOW </span>
+    <span class="badge">1</span>
+</a>
+
+<style>
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp-btn .fab {
+    font-size: 20px;
+}
+
+.whatsapp-btn .text {
+    font-weight: bold;
+}
+
+.whatsapp-btn .badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+</style>
+
+
 
   </div>
   <!-- .site-wrap -->
