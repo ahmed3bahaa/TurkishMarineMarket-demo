@@ -1889,11 +1889,12 @@ h1, h2, h3, h4, h5,
   margin-left: 8px;
 }
 
-/* Enable dropdown on hover */
+/* Parent list item positioning */
 .site-menu li {
   position: relative;
 }
 
+/* Dropdown base style */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -1908,12 +1909,24 @@ h1, h2, h3, h4, h5,
   z-index: 9999;
 }
 
-/* Show dropdown on hover */
-.site-menu li.has-dropdown:hover > .dropdown-content {
-  display: block;
+/* Desktop hover behavior */
+@media (min-width: 992px) {
+  .site-menu li.has-dropdown:hover > .dropdown-content {
+    display: block !important;
+  }
 }
 
-/* Dropdown links styling */
+/* Mobile tap behavior: shown when parent has .active */
+@media (max-width: 991px) {
+  .site-menu li.has-dropdown.active > .dropdown-content,
+  .site-mobile-menu li.has-children.active > .dropdown {
+    display: block !important;
+    position: relative;
+    box-shadow: none;
+  }
+}
+
+/* Dropdown link styling */
 .dropdown-content li a {
   display: block;
   padding: 10px 20px;
@@ -1923,8 +1936,9 @@ h1, h2, h3, h4, h5,
 }
 
 .dropdown-content li a:hover {
-  background: #f1f1f1;
+  background-color: #f5f5f5;
 }
+
 
 /* ==== Inflatable Boats Section ==== */
 

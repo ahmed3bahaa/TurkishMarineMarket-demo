@@ -1,3 +1,5 @@
+
+
  AOS.init({
  	duration: 800,
  	easing: 'slide',
@@ -98,7 +100,8 @@ jQuery(document).ready(function($) {
 	    }
 		});
 	}; 
-	siteMenuClone();
+	 window.siteMenuClone = siteMenuClone;
+siteMenuClone();
 
 
 	var sitePlusMinus = function() {
@@ -337,4 +340,22 @@ jQuery(document).ready(function($) {
 		// $("#bgndVideo").YTPlayer();
 	});
 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.has-dropdown > a').forEach(function (el) {
+    el.addEventListener("click", function (e) {
+
+      // Desktop should follow the link normally
+      if (window.innerWidth >= 992) return;
+
+      // Mobile: open submenu instead of redirecting
+      e.preventDefault();
+
+      const parent = this.parentNode;
+
+      // Toggle open/close
+      parent.classList.toggle("active");
+    });
+  });
 });
