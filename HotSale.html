@@ -38,132 +38,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div id="site-header"></div>
 
 
-    <!-- HERO SLIDER -->
-    <div class="hero-slide owl-carousel site-blocks-cover" id="hero-slider"></div>
+   
+<!-- PAGE CONTENT -->
+<div class="site-section bg-image overlay product-section" style="background-image: url('../images/hero_2.jpg');">
+  <div class="container">
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const start = 7, end = 58;
-        const folder = "images/", prefix = "IMG-20251012-WA", ext = ".jpg";
-        const slider = document.getElementById("hero-slider");
-        const titles = ["","",""];
-
-        for (let i = start; i <= end; i++) {
-          const num = i.toString().padStart(4,'0');
-          const bg = `${folder}${prefix}${num}${ext}`;
-
-          const slide = document.createElement("div");
-          slide.className = "intro-section";
-          slide.style.backgroundImage = `url('${bg}')`;
-          slide.innerHTML = `
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-lg-7 mx-auto text-center" data-aos="fade-up"></div>
-              </div>
-            </div>
-          `;
-          slider.appendChild(slide);
-        }
-
-        $(window).on('load', function () {
-          $('.hero-slide').owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoplayHoverPause: true,
-            animateOut: 'fadeOut',
-            smartSpeed: 40,
-            lazyLoad: true
-          });
-        });
-
-        AOS.init({
-          duration: 1000,
-          easing: 'ease-in-out',
-          once: true
-        });
-      });
-    </script>
-
-
-    <!-- ABOUT SECTION -->
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6">
-            <video src="images/video.mp4" class="img-fluid" autoplay muted loop playsinline></video>
-          </div>
-
-          <div class="col-md-6">
-            <span class="text-serif text-primary">About Us</span>
-            <h3 class="heading-92913 text-black">Welcome To Our Website</h3>
-            <p>
-              Welcome to Turkish Marine Market – your trusted partner for all things marine.
-              From durable inflatable boats and high-quality accessories to PVC-coated fabrics,
-              fiberglass yachts, and exciting water games, we provide everything you need
-              to enjoy life on the water.
-            </p>
-            <p><a href="about.html" class="btn btn-primary py-3 px-4">Learn More</a></p>
-          </div>
-
-        </div>
+    <!-- TITLE -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="product-title">HOT SALE</h2>
+        <p class="product-subtitle">
+          4 Passenger Pedal boat made of fiberglass or polyethylene material.
+        </p>
       </div>
     </div>
 
+   
 
-    <!-- SERVICES -->
-    <div class="py-5">
-      <div class="container">
-        <div class="row">
+ <!-- PRODUCT GRID -->
+<div class="row">
+  <div class="col-12">
+    <div class="product-gallery-grid">
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-29283">
-             
-            </div>
-          </div>
+      <!-- CARD 1 (VIDEO already above) -->
 
-          <div class="col-md-6 col-lg-4">
-            <div class="service-29283">
-             
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="service-29283">
-             
-            </div>
-          </div>
-
+      <!-- CARD 2 -->
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="../images/Images-products-TMM/HOTSale/IMG-20251012-WA0042.jpg"
+               alt="4 Passenger Pedal Boat"
+               class="img-fluid product-image">
         </div>
-      </div>
-    </div>
-
-
-    <!-- COUNTERS -->
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero_2.jpg');">
-      <div class="container">
-        <div class="row text-center">
-
-       
-
+        <div class="product-info">
+          <h3 class="product-name">4-Passenger Pedal Boat</h3>
+          <p class="product-desc">
+            A durable and stable pedal boat built from high-quality fiberglass or polyethylene materials — designed for resorts, rentals, lakes, and family recreation.
+          </p>
         </div>
-      </div>
-    </div>
+      </article>
 
-
-    <!-- CONTACT CTA -->
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero_2.jpg');">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 text-center">
-            <p><a href="contact.html" class="btn btn-warning py-3 px-5 text-white">Contact Us</a></p>
-          </div>
+      <!-- CARD 3 -->
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="../images/Images-products-TMM/HOTSale/IMG-20251119-WA0025.jpg"
+               alt="Pedal Boat Top View"
+               class="img-fluid product-image">
         </div>
-      </div>
-    </div>
+        <div class="product-info">
+          <h3 class="product-name">Spacious Seating</h3>
+          <p class="product-desc">
+            Comfortable seating for 4 passengers with ergonomic design. Suitable for long hours of cruising with maximum stability and balance.
+          </p>
+        </div>
+      </article>
 
+      <!-- CARD 4 -->
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="../images/Images-products-TMM/HOTSale/IMG-20251119-WA0024.jpg"
+               alt="Durable Pedal Boat Hull"
+               class="img-fluid product-image">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Strong Hull Structure</h3>
+          <p class="product-desc">
+            Manufactured using marine-grade fiberglass or polyethylene material, offering excellent resistance to UV rays, saltwater, and heavy daily use.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
 
     <!-- FOOTER (loaded by JS) -->
     <div id="site-footer"></div>
