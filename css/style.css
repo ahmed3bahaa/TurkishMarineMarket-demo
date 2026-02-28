@@ -2113,3 +2113,21 @@ h1, h2, h3, h4, h5,
   align-items: center;
 }
 
+/* ================================
+   Company Profile - WIDTH FIX
+   ================================ */
+#company-profile .tmm-container {
+  width: 100% !important;
+  max-width: 1400px !important;   /* change to 1200/1500/1600 if you want */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* Optional: slightly bigger readable text */
+#company-profile p,
+#company-profile li {
+  font-size: 16px;
+  line-height: 1.7;
+}
