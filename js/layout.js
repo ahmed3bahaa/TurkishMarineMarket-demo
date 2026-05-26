@@ -1,20 +1,27 @@
 // js/layout.js
 
+const layoutBaseUrl = (() => {
+  const scriptUrl = new URL(
+    document.currentScript ? document.currentScript.src : "js/layout.js",
+    window.location.href
+  );
+
+  return new URL("../", scriptUrl);
+})();
+
+function resolveLayoutUrl(relativePath) {
+  return new URL(relativePath.replace(/^\/+/, ""), layoutBaseUrl).href;
+}
+
+function isRelativeAsset(path) {
+  return path && !/^(?:[a-z][a-z\d+.-]*:|\/\/|#|data:|mailto:|tel:|\/)/i.test(path);
+}
+
 async function loadFragment(containerId, relativePath, callback) {
   const el = document.getElementById(containerId);
   if (!el) return;
 
-  // Remove empty segments caused by leading "/" and compute folder depth
-  // depth = number of folders between the project root folder and the current file
-  const segments = window.location.pathname.split("/").filter(Boolean);
-
-  // Example:
-  // /TurkishMarineMarket-demo/index.html              => ["TurkishMarineMarket-demo","index.html"] => depth 0
-  // /TurkishMarineMarket-demo/Service-pages/a.html    => ["TurkishMarineMarket-demo","Service-pages","a.html"] => depth 1
-  const depth = Math.max(0, segments.length - 2);
-
-  const prefix = "../".repeat(depth);
-  const url = prefix + relativePath;
+  const url = resolveLayoutUrl(relativePath);
 
   try {
     const res = await fetch(url, { cache: "no-store" });
@@ -22,6 +29,12 @@ async function loadFragment(containerId, relativePath, callback) {
 
     const html = await res.text();
     el.innerHTML = html;
+    el.querySelectorAll("[src]").forEach((node) => {
+      const src = node.getAttribute("src");
+      if (isRelativeAsset(src)) {
+        node.setAttribute("src", resolveLayoutUrl(src));
+      }
+    });
 
     if (typeof callback === "function") callback();
   } catch (err) {
