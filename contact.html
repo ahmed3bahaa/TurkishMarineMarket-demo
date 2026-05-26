@@ -68,9 +68,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="site-section">
       <div class="container">
 
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" target="web3formsSubmitFrame">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" data-success-url="https://turkishmarinemarket.com.tr/Contact-Success.html">
           <input type="hidden" name="access_key" value="330f67f4-1680-480c-8770-40d20b06b46c">
-          <input type="hidden" name="redirect" value="https://turkishmarinemarket.com.tr/Contact-Success.html">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
 
           <div class="row">
@@ -109,30 +108,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           </div>
         </form>
-        <iframe id="web3formsSubmitFrame" name="web3formsSubmitFrame" title="Contact form submission" style="display:none;"></iframe>
-
-        <script>
-          const form = document.getElementById('contactForm');
-          const formStatus = document.getElementById('formStatus');
-          const submitButton = form.querySelector('button[type="submit"]');
-
-          form.addEventListener('submit', function() {
-            const isLocal =
-              window.location.hostname === '127.0.0.1' ||
-              window.location.hostname === 'localhost';
-            const successUrl = isLocal
-              ? 'Contact-Success.html'
-              : form.querySelector('input[name="redirect"]').value;
-
-            formStatus.className = 'mt-3 mb-0 text-primary';
-            formStatus.textContent = 'Sending your message...';
-            submitButton.disabled = true;
-
-            window.setTimeout(function() {
-              window.location.href = successUrl;
-            }, 1500);
-          });
-        </script>
 
       </div>
     </div>
@@ -201,6 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
   <script src="js/main.js"></script>
+  <script src="js/contact-form.js"></script>
   <script src="js/layout.js"></script>
 
 </body>
